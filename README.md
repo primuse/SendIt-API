@@ -1,18 +1,76 @@
-# SendIT-Courier Service 
-[![Build Status](https://travis-ci.com/primuse/SendIT.svg?branch=master)](https://travis-ci.com/primuse/SendIT)
+# [SendIT](https://primuse.github.io/SendIT/index.html)
+[![Build Status](https://travis-ci.com/primuse/SendIT.svg?branch=APIv1)](https://travis-ci.com/primuse/SendIT)
+[![Coverage Status](https://coveralls.io/repos/github/primuse/SendIT/badge.svg?branch=APIv1)](https://coveralls.io/github/primuse/SendIT?branch=APIv1)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 
-[SendIT](https://primuse.github.io/SendIT/) is a courier service that helps users deliver parcels to different destinations. 
 
-Current Feautures: 
-* Users can create parcels and specify who it is addressed to and destination.
+[SendIT](https://primuse.github.io/SendIT/index.html) is a courier service app that helps users deliver parcels to different destinations all around the world. 
+
+#### Current Feautures: 
+* Users can create parcel orders, specifying who it is addressed to and destination.
 * Users can cancel parcels and change parcel destination.
-* [SendIT](https://primuse.github.io/SendIT/) provides courier quotes based on weight categories.
 * Admin can change the current location and update status of a parcel.
-
-Future Features:
+* Users can see Pickup location and destination on google map
 * Users receive live email notification anytime Admin changes parcel status.
-* Users and Admin can view parcel destination on Google map. 
 
-**N/B: Only Html templates are currently available.**
-**Admin functionalities can be accessed through [admin.html](https://primuse.github.io/SendIT/admin.html)**
+**N/B: Admin functionalities can be accessed through [admin.html](https://primuse.github.io/SendIT/admin.html)**
 
+## Getting Started
+Clone the repo and cd into it.
+
+### Prerequisites
+#### NodeJs is needed on your local machine to run this app
+
+### Installation and Usage
+Simply run:
+
+```npm start```
+
+### Testing
+#### Unit tests can be run using:
+```npm test```
+
+#### API endpoint tests can be done using postman:
+- To create new parcel order
+
+``` POST localhost:3000/api/v1/parcels```
+
+- To get all parcel orders
+
+```GET localhost:3000/api/v1/parcels```
+
+- with query
+
+```GET localhost:3000/api/v1/parcels?weight=5```
+
+- To get a parcel order with ID
+
+```GET localhost:3000/api/v1/parcels/:parcelId```
+
+- To update a parcel order with ID
+
+```PUT localhost:3000/api/v1/parcels/:parcelId/update```
+
+- To cancel a Parcel order with ID
+
+```PUT localhost:3000/api/v1/parcels/:parcelId/cancel```
+
+- To get all parcel orders from User with ID
+
+```GET localhost:3000/api/v1/users/:userId/parcels```
+
+## Technologies used
+NodeJs,
+Express,
+Mocha test suite,
+Chai assertion library
+JSDocs
+
+## Environments
+#### <a href="https://sendit18.herokuapp.com/">API endpoints hosted on Heroku</a>
+#### <a href="https://primuse.github.io/SendIT/index.html">UI templates hosted on GH-pages</a>
+#### <a href="https://www.pivotaltracker.com/n/projects/2212719">Pivotal Tracker board</a>
+
+## Author
+
+* **Tiku Okoye**
